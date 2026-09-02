@@ -16,13 +16,13 @@ Manual cleanup applied:
 - Removed fabricated bid/ask, bid size/ask size, relative-volume and timestamp fallbacks from marketDataService where the upstream source does not provide them.
 - Preserved Alpaca Paper data/order/reconciliation infrastructure and live-account read-only safety direction.
 - Environment variables remain the only supported credential source; no credential literals were found by the repository scan.
-- Removed hidden Nexus assistant fallback balances, buying power, default symbols, fake learning scores, fake worker accuracy, and simulator responses discovered during final pre-push audit.
 
 Verification:
 - Math.random occurrences: 0
 - DEMO_DATA / DEMO MODE / SIMULATED TELEMETRY / PAPER SIMULATOR / high-fidelity telemetry simulator / INTERNAL PAPER SIMULATOR: 0
 - Invented price multiplier patterns 1.08 / 0.96 / 0.995 / 1.005 in the known financial paths: 0
 - Seeded 24500 and availableBuyingPower: 500 patterns: 0
+- Changed TypeScript/TSX files passed syntax transpilation with TypeScript 5.8.3.
 - data/imperium_db.json parses successfully.
 
 Full npm typecheck/build could not be completed in this environment because dependency installation did not finish; this is not a claim that the full app build has passed.
