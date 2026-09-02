@@ -1,0 +1,41 @@
+name: Expand cleaned Imperium project
+
+on:
+  push:
+    paths:
+      - 'Imperium-2.0-ZERO-FAKE-DATA.zip'
+
+permissions:
+  contents: write
+
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Expand cleaned Imperium ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/imperium-clean
+          mkdir -p /tmp/imperium-clean
+          unzip -q -o Imperium-2.0-ZERO-FAKE-DATA.zip -d /tmp/imperium-clean
+          test -f /tmp/imperium-clean/Imperium-2.0-main/package.json
+          cp -a /tmp/imperium-clean/Imperium-2.0-main/. .
+          rm -f Imperium-2.0-ZERO-FAKE-DATA.zip
+          rm -rf bootstrap
+
+      - name: Commit expanded project
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Expand cleaned Imperium 2.0 project'
+          git push
