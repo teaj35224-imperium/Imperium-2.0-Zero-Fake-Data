@@ -3,7 +3,7 @@ name: Expand cleaned Imperium project
 on:
   push:
     paths:
-      - 'Imperium-2.0-ZERO-FAKE-DATA.zip'
+      - 'Imperium-2.0-ZERO-FAKE-DATA-v2.zip'
 
 permissions:
   contents: write
@@ -21,10 +21,10 @@ jobs:
           set -euo pipefail
           rm -rf /tmp/imperium-clean
           mkdir -p /tmp/imperium-clean
-          unzip -q -o Imperium-2.0-ZERO-FAKE-DATA.zip -d /tmp/imperium-clean
+          unzip -q -o Imperium-2.0-ZERO-FAKE-DATA-v2.zip -d /tmp/imperium-clean
           test -f /tmp/imperium-clean/Imperium-2.0-main/package.json
           cp -a /tmp/imperium-clean/Imperium-2.0-main/. .
-          rm -f Imperium-2.0-ZERO-FAKE-DATA.zip
+          rm -f Imperium-2.0-ZERO-FAKE-DATA-v2.zip
           rm -rf bootstrap
 
       - name: Commit expanded project
