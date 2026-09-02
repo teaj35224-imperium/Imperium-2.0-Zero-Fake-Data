@@ -1,0 +1,30 @@
+IMPERIUM 2.0 MANUAL CLEANUP REPORT
+
+Source: Imperium-2.0-main (2).zip from Google Studio
+
+Manual cleanup applied:
+- Removed all Math.random occurrences from project source.
+- Removed binary/data-looking random animation; preserved only a static non-data visual background.
+- Removed DEMO_DATA provider mappings and simulator/demo UI labels.
+- Removed seeded persisted balances, opportunities, positions, workers, activity, logs, and horizon snapshots from data/imperium_db.json.
+- Removed $24,500 and $500 startup brokerage-like values; startup local balances are now zero/unconfigured rather than invented.
+- Removed hardcoded Daily Brief trading narrative and replaced it with DATA NOT FOUND until an authoritative brief source exists.
+- Removed invented Nexus thesis, confidence, entry, target, stop, and +8%/-4% fallback calculations.
+- Removed invented Stock Workspace quote fallback values.
+- Removed random worker latency and simulator recovery wording.
+- Removed hardcoded/synthetic equity growth chart and shadow intelligence runtime view.
+- Removed fabricated bid/ask, bid size/ask size, relative-volume and timestamp fallbacks from marketDataService where the upstream source does not provide them.
+- Preserved Alpaca Paper data/order/reconciliation infrastructure and live-account read-only safety direction.
+- Environment variables remain the only supported credential source; no credential literals were found by the repository scan.
+- Removed hidden Nexus assistant fallback balances, buying power, default symbols, fake learning scores, fake worker accuracy, and simulator responses discovered during final pre-push audit.
+
+Verification:
+- Math.random occurrences: 0
+- DEMO_DATA / DEMO MODE / SIMULATED TELEMETRY / PAPER SIMULATOR / high-fidelity telemetry simulator / INTERNAL PAPER SIMULATOR: 0
+- Invented price multiplier patterns 1.08 / 0.96 / 0.995 / 1.005 in the known financial paths: 0
+- Seeded 24500 and availableBuyingPower: 500 patterns: 0
+- data/imperium_db.json parses successfully.
+
+Full npm typecheck/build could not be completed in this environment because dependency installation did not finish; this is not a claim that the full app build has passed.
+
+Next pass after import/build verification: dead-end button/route/handler connection audit.
