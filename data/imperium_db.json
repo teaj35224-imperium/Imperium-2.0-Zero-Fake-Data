@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "lastSavedAt": "",
+  "operatingState": "STANDBY",
+  "nexusAllowance": 0,
+  "mainMoney": 0,
+  "profitReserve": 0,
+  "profitAllocation": {
+    "reinvestPercent": 75,
+    "reservePercent": 25,
+    "totalRealizedProfit": 0,
+    "profitReserved": 0,
+    "withdrawableCash": 0,
+    "actuallyWithdrawnProfit": 0
+  },
+  "riskLimits": {
+    "perTradeCap": 100,
+    "globalLossStop": 1000,
+    "dailyMaxExposure": 500,
+    "weeklyMaxExposure": 1000,
+    "maxConcurrentPositions": 5,
+    "minLiquidityScore": 70,
+    "maxSpreadAllowed": 0.05,
+    "marketHoursOnly": true,
+    "catalystGatingEnabled": true,
+    "emergencyFreezeActive": false,
+    "riskState": "SAFE"
+  },
+  "capitalLedger": [],
+  "workers": [],
+  "tasks": [],
+  "opportunities": [],
+  "decisionArchive": [],
+  "positions": [],
+  "shadowObservations": [],
+  "capitalWaitingQueue": [],
+  "horizonSnapshots": [],
+  "systemLogs": [],
+  "nexusActivities": []
+}
